@@ -1,4 +1,5 @@
-# setup-arkade 0 Your favourite developer CLIs for GitHub Actions
+# setup-arkade
+## Your favourite developer CLIs for GitHub Actions
 
 This is a GitHub action to make it a bit quicker to use [arkade](https://arkade.dev) from GitHub Actions.
 

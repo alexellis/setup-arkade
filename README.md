@@ -28,8 +28,10 @@ Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-ge
         flyctl: latest
     - name: check for faas-cli
       run: |
-        $HOME/.arkade/bin/faas-cli version
+        faas-cli version
 ```
+
+Binaries are placed in `$HOME/.arkade/bin/` and this path is added to the runner's PATH.
 
 See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)
 

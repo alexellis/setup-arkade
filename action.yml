@@ -1,0 +1,18 @@
+# Copyright (c) 2022 OpenFaaS Ltd
+name: 'Install arkade'
+description: 'Install arkade'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'gray-dark'
+runs:
+    using: 'composite'
+    steps:
+      - name: Install Install
+        shell: bash
+        id: download
+        run: |
+          if ! [ -x "$(command -v curl)" ]; then
+            sudo apt update && sudo apt install -qy curl
+          fi
+
+          curl -sLS https://get.arkade.dev | sudo sh

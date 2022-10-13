@@ -6,7 +6,31 @@ What's arkade?
 
 arkade is a cross-platform tool for downloading the latest (or pinned) versions of your favourite CLIs, for installing Helm charts and Kubernetes apps, and system-level packages like Go, containerd and Firecracker.
 
+How's it different to apt-get, brew and spending hours trawling README files?
+
 [Learn more](https://arkade.dev)
+
+## You may also like "alexellis/arkade-get"
+
+Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-get` is all about making the `arkade get` command seamless.
+
+```yaml
+    - uses: alexellis/setup-arkade@v1
+    - uses: alexellis/arkade-get@master
+      with:
+        kubectl: v1.25.0
+        faas-cli: 0.14.10
+        helm: latest
+        terraform: latest
+        inletsctl: latest
+        docker-compose: latest
+        flyctl: latest
+    - name: check for faas-cli
+      run: |
+        $HOME/.arkade/bin/faas-cli version
+```
+
+See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)_
 
 ## Install arkade
 

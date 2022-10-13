@@ -16,3 +16,5 @@ runs:
           fi
 
           curl -sLS https://get.arkade.dev | sudo sh
+
+          echo "PATH=$HOME/.arkade/bin:$PATH" >> $GITHUB_ENV

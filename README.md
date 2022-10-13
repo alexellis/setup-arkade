@@ -16,7 +16,7 @@ How's it different to apt-get, brew and spending hours trawling README files?
 Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-get` is all about making the `arkade get` command seamless.
 
 ```yaml
-    - uses: alexellis/setup-arkade@v1
+    - uses: alexellis/setup-arkade@v2
     - uses: alexellis/arkade-get@master
       with:
         kubectl: v1.25.0
@@ -31,7 +31,7 @@ Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-ge
         faas-cli version
 ```
 
-Binaries are placed in `$HOME/.arkade/bin/` and this path is added to the runner's PATH.
+Binaries are placed in `` and this path is added to the runner's PATH, so there's no need to prefix any binaries that you then go on to use.
 
 See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)
 
@@ -41,7 +41,7 @@ Install arkade in a GitHub Action
 
 ```yaml
 - name: Install arkade
-  uses: alexellis/setup-arkade@v1
+  uses: alexellis/setup-arkade@v2
 ```
 
 Use the latest version in master:
@@ -57,26 +57,26 @@ Install arkade in a GitHub Action and get the latest version of kubectl
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get kubectl
     run: |
         arkade get kubectl
   - name: Run kubectl
     run: |
-        $HOME/.arkade/bin/kubectl version
+      kubectl version
 ```
 
 Install a specific version of a tool
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get faas-cli 0.14.10
     run: |
-        arkade get faas-cli@0.14.10
+      arkade get faas-cli@0.14.10
   - name: Run kubectl
     run: |
-        $HOME/.arkade/bin/faas-cli version
+      faas-cli version
 ```
 
 
@@ -84,27 +84,27 @@ Install multiple tools
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get tools for CI
     run: |
-        arkade get kubectl \
-            faas-cli \
-            inletsctl \
-            helm
+      arkade get kubectl \
+          faas-cli \
+          inletsctl \
+          helm
 ```
 
 Or install to /usr/local/bin
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get kubectl
     run: |
-        arkade get kubectl
-        sudo mv .arkade/bin/kubectl /usr/local/bin
+      arkade get kubectl
+      sudo mv .arkade/bin/kubectl /usr/local/bin
   - name: Run kubectl
     run: |
-        kubectl version
+      kubectl version
 ```
 
 ## System apps
@@ -137,27 +137,27 @@ Install firecracker:
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get kubectl
     run: |
-        arkade system install firecracker
+      arkade system install firecracker
   - name: Run firecracker
     run: |
-        firecracker --version
+      firecracker --version
 ```
 
 Install containerd and go (latest):
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v1
+    uses: alexellis/arkade@v2
   - name: Get containerd
     run: |
-        arkade system install containerd
-        /usr/local/bin/containerd version
+      arkade system install containerd
+      /usr/local/bin/containerd version
   - name: Run go
     run: |
-         arkade system install go
-         /usr/local/bin/go version
+       arkade system install go
+       /usr/local/bin/go version
 ```
 

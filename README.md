@@ -31,7 +31,7 @@ Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-ge
         $HOME/.arkade/bin/faas-cli version
 ```
 
-See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)_
+See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)
 
 ## Install arkade
 

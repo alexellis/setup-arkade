@@ -2,7 +2,11 @@
 
 This is a GitHub action to make it a bit quicker to use [arkade](https://arkade.dev) from GitHub Actions.
 
-What's arkade? [Learn more](https://arkade.dev)
+What's arkade?
+
+arkade is a cross-platform tool for downloading the latest (or pinned) versions of your favourite CLIs, for installing Helm charts and Kubernetes apps, and system-level packages like Go, containerd and Firecracker.
+
+[Learn more](https://arkade.dev)
 
 ## Install arkade
 

@@ -1,4 +1,5 @@
 # setup-arkade
+
 ## Your favourite developer CLIs for GitHub Actions
 
 This is a GitHub action to make it a bit quicker to use [arkade](https://arkade.dev) from GitHub Actions.
@@ -7,7 +8,9 @@ What's arkade?
 
 arkade is a cross-platform tool for downloading the latest (or pinned) versions of your favourite CLIs, for installing Helm charts and Kubernetes apps, and system-level packages like Go, containerd and Firecracker.
 
-How's it different to apt-get, brew and spending hours trawling README files?
+That means you don't need a lot of curl statements in your builds, and when you support Arm, you don't need if statements for the architecture. When you support multiple operating systems, you don't need if statements for Linux/Darwin, etc.
+
+How is it different to apt-get, brew and spending hours trawling README files?
 
 [Learn more](https://arkade.dev)
 
@@ -16,7 +19,6 @@ How's it different to apt-get, brew and spending hours trawling README files?
 Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-get` is all about making the `arkade get` command seamless.
 
 ```yaml
-    - uses: alexellis/setup-arkade@v2
     - uses: alexellis/arkade-get@master
       with:
         kubectl: v1.25.0
@@ -31,7 +33,7 @@ Whilst `alexellis/setup-arkade` installs the arkade binary, `alexellis/arkade-ge
         faas-cli version
 ```
 
-Binaries are placed in `` and this path is added to the runner's PATH, so there's no need to prefix any binaries that you then go on to use.
+Binaries are placed in `$HOME/.arkade/bin/` and this path is added to the runner's PATH, so there's no need to prefix any binaries that you then go on to use.
 
 See also: ["alexellis/arkade-get"](https://github.com/alexellis/arkade-get)
 

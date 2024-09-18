@@ -50,7 +50,7 @@ Use the latest version in master:
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@master
+    uses: alexellis/setup-arkade@master
 ```
 
 ## Use arkade to download a CLI
@@ -59,7 +59,7 @@ Install arkade in a GitHub Action and get the latest version of kubectl
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get kubectl
     run: |
         arkade get kubectl
@@ -72,7 +72,7 @@ Install a specific version of a tool
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get faas-cli 0.14.10
     run: |
       arkade get faas-cli@0.14.10
@@ -86,7 +86,7 @@ Install multiple tools
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get tools for CI
     run: |
       arkade get kubectl \
@@ -99,7 +99,7 @@ Or install to /usr/local/bin
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get kubectl
     run: |
       arkade get kubectl
@@ -139,7 +139,7 @@ Install firecracker:
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get kubectl
     run: |
       arkade system install firecracker
@@ -152,7 +152,7 @@ Install containerd and go (latest):
 
 ```yaml
   - name: Setup arkade
-    uses: alexellis/arkade@v2
+    uses: alexellis/setup-arkade@v2
   - name: Get containerd
     run: |
       arkade system install containerd
